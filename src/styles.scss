@@ -1,0 +1,32 @@
+$font: sans-serif;
+$marginValue:10;
+
+@mixin transform($property) {
+  -webkit-transform: rotate($property);
+  -ms-transform: rotate($property);
+  transform: rotate($property);
+}
+%myPadding{
+  padding: $marginValue;
+  margin: $marginValue;
+}
+
+.App {
+  font-family: $font;
+  text-align: center;
+  @extend %myPadding;
+}
+form{
+  label{
+    padding: $marginValue;
+    margin: $marginValue;
+  }
+  .btn.btn-primary { 
+    background-color:green;
+  }
+}
+
+.rotate {
+  @include transform(90deg);
+}
+
